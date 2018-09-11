@@ -6,7 +6,10 @@ namespace RNATranscriptionModule
     {
         public static string ToRna(string nucleotides)
         {
+            // Making a dummy string which will convert DNA to RNA string
             string rnaString = "";
+            // Checking each DNA string and appending the corresponding
+            // RNA string to rnaString
             foreach(char nucleotide in nucleotides){
                 switch(nucleotide){
                     case 'G':
