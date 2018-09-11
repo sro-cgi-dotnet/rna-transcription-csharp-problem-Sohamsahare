@@ -26,7 +26,6 @@ namespace RNATranscriptionModule
                             break;
                     default:
                             throw new ArgumentException("Nucleotides can only be G, C, T and A");
-                            break;
                 }
             }
             return rnaString;
