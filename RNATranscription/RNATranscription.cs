@@ -1,5 +1,5 @@
 ﻿using System;
-
+using System.Text;
 namespace RNATranscriptionModule
 {
     public static class RnaTranscription
@@ -7,29 +7,29 @@ namespace RNATranscriptionModule
         public static string ToRna(string nucleotides)
         {
             // Making a dummy string which will convert DNA to RNA string
-            string rnaString = "";
+            StringBuilder rnaString = new StringBuilder();
             // Checking each DNA string and appending the corresponding
             // RNA string to rnaString
             foreach(char nucleotide in nucleotides){
                 switch(nucleotide){
                     case 'G':
-                            rnaString += "C";
+                            rnaString.Append("C");
                             break;
                     case 'C':
-                            rnaString += "G";
+                            rnaString.Append("G");
                             break;
                     case 'T':
-                            rnaString += "A";
+                            rnaString.Append("A");
                             break;
                     case 'A':
-                            rnaString += "U";
+                            rnaString.Append("U");
                             break;
                     default:
                             throw new ArgumentException("Nucleotides can only be G, C, T and A");
                 }
             }
             // returning the updated string
-            return rnaString;
+            return rnaString.ToString();
         }
     }
 }
